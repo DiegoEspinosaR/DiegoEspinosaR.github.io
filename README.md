@@ -11,4 +11,4 @@ Este es mi portafolio web desarrollado con **React** y **TailwindCSS**, donde pr
 - Modelos 3D originales
 - Sección de storytelling y diseño de personajes
 - Filosofía de desarrollo personal y profesional
-- CV descargable (próximamente)
+- Vista previa de mi cv
