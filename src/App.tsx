@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<PageWrapper><Landing /></PageWrapper>} />
-        <Route path="/hero" element={<PageWrapper><Hero /></PageWrapper>} />
+        <Route path="/hero" element={<Hero />} />
         <Route path="/backend" element={<PageWrapper><Backend /></PageWrapper>} />
         <Route path="/3d" element={<PageWrapper><ThreeD /></PageWrapper>} />
         <Route path="/video" element={<PageWrapper><Video /></PageWrapper>} />

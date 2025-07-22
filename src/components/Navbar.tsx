@@ -26,7 +26,7 @@ const Navbar = () => {
 
         {/* Avatar (CV): Siempre visible */}
         <div className="ml-4">
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a target="_blank" rel="noopener noreferrer">
             <img
               src=""
               alt="CV"
