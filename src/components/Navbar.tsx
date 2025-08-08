@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-gray-800 text-white px-6 py-4 shadow-md">
       <div className="flex items-center justify-between">
-        {/* Botones: Desktop visible */}
+        {/*Desktop*/}
         <div className="hidden md:flex space-x-4">
           <Link to="/" className="hover:text-indigo-400 transition">Inicio</Link>
           <Link to="/hero" className="hover:text-indigo-400 transition">Tablero</Link>
@@ -17,7 +17,7 @@ const Navbar = () => {
           <Link to="/video" className="hover:text-indigo-400 transition">Video</Link>
         </div>
 
-        {/* Icono menú en móvil */}
+        {/*Móvil*/}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -40,7 +40,6 @@ const Navbar = () => {
       {isOpen && (
         <div className="flex flex-col mt-4 md:hidden divide-y divide-gray-600">
           <Link to="/" className="py-2 px-1 hover:text-indigo-400 transition">Inicio</Link>
-          <Link to="/hero" className="py-2 px-1 hover:text-indigo-400 transition">Tablero</Link>
           <Link to="/backend" className="py-2 px-1 hover:text-indigo-400 transition">Backend</Link>
           <Link to="/3d" className="py-2 px-1 hover:text-indigo-400 transition">3D</Link>
           <Link to="/video" className="py-2 px-1 hover:text-indigo-400 transition">Video</Link>
