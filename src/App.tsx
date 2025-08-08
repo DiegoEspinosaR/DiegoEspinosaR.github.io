@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Sidebar from './components/Sidebar';
 import SobreMi from './sections/SobreMi';
 import Habilidades from './sections/Habilidades';
@@ -23,27 +22,6 @@ function App() {
         <section id="contacto"><Contacto /></section>
       </main>
     </div>
-=======
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Backend from './pages/BackendOverview';
-import ThreeD from './pages/ThreeDOverview';
-import Video from './pages/VideoOverview';
-import Landing from './pages/Landing';
-import PageWrapper from './layouts/PageWrapper';
-import Navbar from './components/Navbar';
-
-function App() {
-  return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<PageWrapper><Landing /></PageWrapper>} />
-        <Route path="/backend" element={<PageWrapper><Backend /></PageWrapper>} />
-        <Route path="/3d" element={<PageWrapper><ThreeD /></PageWrapper>} />
-        <Route path="/video" element={<PageWrapper><Video /></PageWrapper>} />
-      </Routes>
-    </>
->>>>>>> 158c4a5fb6e3e09df254cb3faebd1ad688ba11f9
   );
 }
 
