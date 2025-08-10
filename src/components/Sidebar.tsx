@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "./LanguageSwitcher"; // Importa el componente
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);

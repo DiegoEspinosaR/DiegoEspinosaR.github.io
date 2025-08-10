@@ -1,4 +1,3 @@
-// src/components/FakeCookiesModal.tsx
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -8,7 +7,7 @@ export default function FakeCookiesModal() {
   useEffect(() => {
     const hasSeenModal = sessionStorage.getItem("fakeCookiesDismissed");
     if (!hasSeenModal) {
-      const timer = setTimeout(() => setVisible(true), 1000); // Mostrar tras 1s
+      const timer = setTimeout(() => setVisible(true), 1000);
       return () => clearTimeout(timer);
     }
   }, []);

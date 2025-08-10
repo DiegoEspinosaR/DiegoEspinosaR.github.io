@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import './i18n';
 import { useTranslation } from 'react-i18next';
+
 import LanguageSelectorModal from './components/LanguageSelectorModal';
-import LanguageSwitcher from './components/LanguageSwitcher';
+import FakeCookiesModal from './components/FakeCookiesModal';
 
 import Sidebar from './components/Sidebar';
 import SobreMi from './sections/SobreMi';
@@ -17,19 +18,33 @@ function App() {
   const { i18n } = useTranslation();
   const [langSelected, setLangSelected] = useState(false);
 
+  //Quite la lectura de localstorage para que el usuario no tenga memoria usada si no va a visitar la pagina mas de una vez, 
+  //para regresarlo quita los comentarios y elimina el codigo de abajo :p
+  //
+  //useEffect(() => {
+  //  const savedLang = localStorage.getItem('lang');
+  //  if (savedLang) {
+  //    i18n.changeLanguage(savedLang);
+  //    setLangSelected(true);
+  //  }
+  //}, [i18n]);
+  //
+  //  const handleLangSelect = (lang: string) => {
+  //  i18n.changeLanguage(lang);
+  //  localStorage.setItem('lang', lang);
+  //  setLangSelected(true);
+  //};
+
   useEffect(() => {
-    const savedLang = localStorage.getItem('lang');
-    if (savedLang) {
-      i18n.changeLanguage(savedLang);
-      setLangSelected(true);
-    }
-  }, [i18n]);
+    setLangSelected(false);
+  }, []);
+
 
   const handleLangSelect = (lang: string) => {
     i18n.changeLanguage(lang);
-    localStorage.setItem('lang', lang);
     setLangSelected(true);
   };
+
 
   return (
     <>
@@ -49,6 +64,8 @@ function App() {
             <section id="backend"><BackendAPIs /></section>
             <section id="contacto"><Contacto /></section>
           </main>
+          <FakeCookiesModal />
+          
         </div>
       )}
     </>
