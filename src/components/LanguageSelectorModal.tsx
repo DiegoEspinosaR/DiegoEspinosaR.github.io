@@ -1,23 +1,43 @@
-import { useTranslation } from 'react-i18next';
+import { useState, useEffect } from "react";
 
-export default function LanguageSelectorModal({ onSelect }: { onSelect: (lang: string) => void }) {
-  const { t } = useTranslation();
+type Props = {
+  onSelect: (lang: string) => void;
+};
+
+export default function LanguageSelectorModal({ onSelect }: Props) {
+  const [isVisible, setIsVisible] = useState(true);
+
+  // Función para cerrar con animación
+  const closeModal = (lang: string) => {
+    setIsVisible(false);
+    setTimeout(() => {
+      onSelect(lang);
+    }, 300); // 300ms duración de la animación
+  };
 
   return (
-    <div className="fixed inset-0 bg-black/80 flex flex-col justify-center items-center text-white z-50">
-      <h1 className="text-3xl mb-6">{t('selectLanguage')}</h1>
+    <div
+      className={`fixed inset-0 bg-black/80 flex flex-col justify-center items-center text-white z-50 transition-opacity duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+      aria-modal="true"
+      role="dialog"
+    >
+      <h1 className="text-3xl mb-2">¿Qué idioma prefieres?</h1>
+      <h2 className="text-xl mb-6">Which language do you prefer?</h2>
+
       <div className="flex gap-4">
         <button
-          onClick={() => onSelect('es')}
-          className="px-4 py-2 bg-yellow-500 rounded"
+          onClick={() => closeModal("es")}
+          className="px-4 py-2 bg-indigo-800 hover:bg-indigo-900 rounded text-white font-semibold transition"
         >
-          {t('spanish')}
+          Español
         </button>
         <button
-          onClick={() => onSelect('en')}
-          className="px-4 py-2 bg-blue-500 rounded"
+          onClick={() => closeModal("en")}
+          className="px-4 py-2 bg-indigo-800 hover:bg-indigo-900 rounded text-white font-semibold transition"
         >
-          {t('english')}
+          English
         </button>
       </div>
     </div>

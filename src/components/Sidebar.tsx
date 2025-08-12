@@ -32,22 +32,22 @@ const Sidebar = () => {
       </div>
 
       {/* Links (Desktop) */}
-      <div className="hidden md:flex flex-col p-4 space-y-4 flex-1">
-        {links.map((link) => (
-          <Link
-            key={link.to}
-            to={link.to}
-            smooth={true}
-            duration={500}
-            offset={-50}
-            containerId="main-container"
-            className="cursor-pointer hover:text-indigo-400 transition"
-          >
-            {link.label}
-          </Link>
-        ))}
-
-        {/* LanguageSwitcher abajo con mt-auto */}
+      <div className="hidden md:flex flex-col flex-1 p-4">
+        <div className="flex flex-col space-y-4 justify-center flex-grow">
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              smooth={true}
+              duration={500}
+              offset={-50}
+              containerId="main-container"
+              className="cursor-pointer hover:text-indigo-400 transition"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
         <div className="mt-auto">
           <LanguageSwitcher />
         </div>
